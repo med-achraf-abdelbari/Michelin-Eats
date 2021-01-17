@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Michelin Eats</title>
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body id="root">
+
+<!-- Project layout Start-->
+
+<header>
+
+    <div class="sidenav">
+        <div class="menu-toggle" onClick="toggleSidebar(event)">
+            <span class="menu-toggle-btn"><i class="fas fa-bars"></i></span>
+        </div>
+    </div>
+
+    <div class="logo d-flex-center" onclick="goHome()">
+
+        <div class="company-logo">
+            <img alt="Michelin Eats" class="logo-img" src="../img/logo.png">
+        </div>
+
+        <div class="company-name w-100">
+            Michelin Eats
+        </div>
+
+        <div class="company-description w-80">
+            <span class="text-uppercase">The definitive list of worlwide Michelin starred restaurants.</span>
+        </div>
+
+    </div>
+
+    <div class="contact-details">
+        <div class="row w-100">
+            <div class="col-12 text-right">
+                <span><i class="fas fa-phone-square"></i> + 123 456 789</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="belly"></div>
+
+</header>
+
+<nav id="sideBar">
+    <ul>
+        <li><a href="./addReview.html">Submit a Review</a></li>
+        <li><a href="browseByType.html?restoType=region">Browse By region</a></li>
+        <li><a href="browseByType.html?restoType=cuisine">Browse By cuisine</a></li>
+        <li><a href="browseByType.html?restoType=Stars">Browse By Stars</a></li>
+        <li><a href="browseByMap.html">Browse By map</a></li>
+    </ul>
+</nav>
+
+<div class="main-container">
+
+
+    <div class="form-container restaurants">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="form-section">
+                    <span class="section-title">Search</span>
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <input placeholder="Search by name, location or chef..." type="text">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <h2 class="text-uppercase">Michelin RESTAURANTS IN THE UK</h2>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('Loch Bay')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/IMG_3817-e1509531883637.jpg"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Loch Bay</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">
+                            Unpretentious spot for local seafood such as hand-dived scallops, run by a husband-and-wife
+                            team.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Waternish | <strong>Modern Cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('Braidwoods')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/0_gv.jpg"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Braidwoods</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <p class="card-text">
+                            Remote fine dining restaurant using local produce including quail and scallops in innovative
+                            dishes.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Dalry | <strong>Classic cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('OX')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/z7-p1.jpg"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Eipic</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">
+                            Artful plates of Modern European cuisine presented in an intimate setting with elegant
+                            decor.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Belfast | <strong>Modern Cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('OX')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/photo2jpg.jpg"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">OX</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">
+                            OX Restaurant finds inspiration in the wood-fired grilling tradition of Argentina, and with
+                            it, the culinary heritage of Spain, France and Italy
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Belfast | <strong>Modern British</strong></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('The Peat Inn')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/pppea.PNG"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">The Peat Inn</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">
+                            A Michelin starred restaurant with rooms, owned and run since June 2006 by Geoffrey and
+                            Katherine Smeddle offering a range of seasonal menus.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Peat Inn | <strong>Classic cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('Kitchin')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/kit.PNG"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Kitchin</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">
+                            Tom Kitchin uses French techniques on Scottish produce in refined, chic converted whisky
+                            warehouse.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Leith | <strong>Modern Cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('Loch Bay')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/martin.PNG"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Loch Bay</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">
+                            Superchef's imaginative, elegant French cooking uses seasonal Scottish produce with set
+                            lunch deals.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Leith | <strong>Modern Cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('Number One')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/number.PNG"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Number One</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">
+                            Sophisticated Scottish fine dining in romantic luxury hotel ambiance, with a chef's tasting
+                            menu.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Edinburgh | <strong>Classic cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                <div class="card h-100" onclick="showRestaurantDetails('Eipic')">
+                    <img
+                            alt="..."
+                            class="card-img-top"
+                            src="../img/behind.PNG"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Eipic</h5>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <p class="card-text">
+                            The Man Behind The Curtain is a restaurant in Leeds, West Yorkshire, England, which was
+                            opened in 2014 by chef Michael O'Hare.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Leeds | <strong>Creative Cuisine</strong></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <ul class="pagination">
+                    <li class="pagination-item w-100">First</li>
+
+                    <li class="pagination-item">1</li>
+                    <li class="pagination-item">2</li>
+                    <li class="pagination-item">3</li>
+                    <li class="pagination-item">4</li>
+                    <li class="pagination-item">5</li>
+                    <li class="pagination-item">6</li>
+
+                    <li class="pagination-item w-100">Last</li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-3 footer-section">
+            <div class="footer-section-title">
+                <span> <i class="fa fa-envelope-square"></i> Get in touch</span>
+                <div class="underline--footer"></div>
+                <ul>
+                    <li><a href="./contactUs.html">Contact us</a></li>
+                    <li><a href="./addReview.html">Submit a review</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 footer-section">
+            <div class="footer-section-title">
+                <span><i class="fab fa-dribbble-square"></i> About us</span>
+                <div class="underline--footer"></div>
+                <ul>
+                    <li><a href="">Our mission</a></li>
+                    <li><a href="">Meet the</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 footer-section">
+            <div class="footer-section-title">
+                <span><i class="fa fa-glass-cheers"></i> Restaurants</span>
+                <div class="underline--footer"></div>
+                <ul>
+                    <li><a href="">Europe</a></li>
+                    <li><a href="">Middle-East</a></li>
+                    <li><a href="">Asia</a></li>
+                    <li><a href="">Australia</a></li>
+                    <li><a href="">North-America</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 footer-section">
+            <div class="footer-section-title">
+                <span><i class="fa fa-print"></i> The legal bit</span>
+                <div class="underline--footer"></div>
+                <ul>
+                    <li><a href="">FAQs</a></li>
+                    <li><a href="">Privacy & cookie policy</a></li>
+                    <li><a href="">Terms & conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- MDB -->
+<!--<script src="Js/mdb.min.js" type="text/javascript"></script>-->
+<script src="../Js/index.js" type="text/javascript"></script>
+<!-- Custom scripts -->
+<script type="text/javascript">
+    showRestaurantDetails = (name) =>{
+        window.open('./restaurantDetails.html','_self');
+    }
+</script>
+</body>
+</html>
